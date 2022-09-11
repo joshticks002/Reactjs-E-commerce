@@ -37,12 +37,24 @@
   &.inverted {
     background-color: white;
     color: black;
-    border: 1px solid black;
+    border: none;
 
     &:hover {
       background-color: black;
       color: white;
       border: none;
     }
+
+    @media (max-width: 820px) {
+      min-width: 65px;
+      width: auto;
+      height: 25px;
+      letter-spacing: 0.5px;
+      line-height: 25px;
+      padding: 0 15px 0 15px;
+      font-size: 12px;
+    }
   }
+
+  
 }

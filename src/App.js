@@ -3,7 +3,10 @@ import Home from "./routes/home/home.component";
 // import NavBar from "./routes/navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication";
 import Navibar from "./routes/nav/Navbar";
+import Shop from "./routes/shop/shop.component";
 import { Routes, Route } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "./context/user.context";
 import Swal from "sweetalert2";
 
 const App = () => {
@@ -19,12 +22,15 @@ const App = () => {
       footer: "<a href>Shop our variety of products</a>"
     });
   }, []);
+  const {currentUser} = useContext(UserContext)
 
   return (
     <Routes>
       <Route path="/" element={<Navibar />}>
         <Route index element={<Home />} />
         <Route path="/auth" element={<Authentication />} />
+       {currentUser && (<Route path="/shop" element={<Shop />} />)}
+       <Route path="/shop" element={<Shop />} />
       </Route>
     </Routes>
   );

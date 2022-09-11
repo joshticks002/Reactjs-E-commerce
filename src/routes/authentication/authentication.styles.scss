@@ -10,7 +10,15 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin:15px;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 912px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
     box-sizing: border-box;
   }
 }

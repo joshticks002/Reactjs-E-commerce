@@ -3,9 +3,9 @@ import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
+
 import {
   signInWithGooglePopup,
-  createUserDocFromAuth,
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 import Swal from "sweetalert2";
@@ -21,20 +21,33 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
+
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocFromAuth(user);
+    await signInWithGooglePopup();
+    
+    setTimeout(() => {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        iconColor: "#f0aa1f",
+        text: `Successfully logged In`,
+        confirmButtonColor: "#f0aa1f",
+      });
+    }, 500);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      await signInAuthUserWithEmailAndPassword(email, password);
+      await signInAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
 
       resetFormFields();
       setTimeout(() => {

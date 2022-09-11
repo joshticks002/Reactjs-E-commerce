@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import RightNav from './RightNav';
+// import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 
 const StyledBurger = styled.div`
   width: 2rem;
@@ -51,6 +52,7 @@ const Burger = () => {
         <div />
       </StyledBurger>
       <RightNav open={open}/>
+      {/* <CartDropdown /> */}
     </>
   )
 }
