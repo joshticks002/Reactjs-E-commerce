@@ -39,7 +39,7 @@ const Ul = styled.ul`
 
 const RightNav = ({ open }) => {
   const { currentUser } = useContext(UserContext);
-  const { isCartOpen} = useContext(CartContext);
+  const { isCartOpen } = useContext(CartContext);
 
   return (
     <>
