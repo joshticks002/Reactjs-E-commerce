@@ -4,10 +4,10 @@ import RightNav from './RightNav';
 // import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 
 const StyledBurger = styled.div`
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   position: fixed;
-  top: 15px;
+  top: 25px;
   right: 20px;
   z-index: 20;
   display: none;
@@ -19,7 +19,7 @@ const StyledBurger = styled.div`
   }
 
   div {
-    width: 2rem;
+    width: 1.5rem;
     height: 0.25rem;
     background-color: ${({ open }) => open ? '#000' : '#333'};
     border-radius: 10px;

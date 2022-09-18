@@ -25,7 +25,7 @@ const Ul = styled.ul`
     top: 0;
     right: 0;
     min-height: 109vh;
-    width: 200px;
+    width: 170px;
     padding-top: 3.5rem;
     transition: transform 0.3s ease-in-out;
     z-index: 1;
