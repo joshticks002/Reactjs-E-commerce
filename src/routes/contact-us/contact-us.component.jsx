@@ -49,7 +49,6 @@ const ContactUs = () => {
         <div className="fa" aria-hidden="true">
         <FaTwitter />
         </div>
-        <p>Copyright all rights reserved</p>
       </div>
     </div>
   );

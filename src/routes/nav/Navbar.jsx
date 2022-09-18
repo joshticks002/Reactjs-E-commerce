@@ -1,5 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import React, { Fragment } from "react";
+import Footer from "../footer/footer.component"
 // import { ReactComponent as MyLogo } from "../../assets/crown.svg";
 import styled from "styled-components";
 import Burger from "./Burger";
@@ -35,6 +36,7 @@ const Navibar = () => {
         <Burger />
       </Nav>
       <Outlet />
+      <Footer />
     </Fragment>
   );
 };

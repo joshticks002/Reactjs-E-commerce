@@ -8,6 +8,7 @@ import Navibar from "./routes/nav/Navbar";
 import Shop from "./routes/shop/shop.component";
 import Checkout from "./routes/checkout/checkout.component";
 import ContactUs from "./routes/contact-us/contact-us.component"
+import LandingPage from "./routes/landing-page/landing-page.component";
 import { UserContext } from "./context/user.context";
 import Swal from "sweetalert2";
 
@@ -36,6 +37,7 @@ const App = () => {
        <Route path="/shop/*" element={<Shop />} />
        <Route path="/checkout" element={<Checkout />} />
        <Route path="/contact" element={<ContactUs />} />
+       <Route path="/trendlin" element={<LandingPage />} />
       </Route>
     </Routes>
   );
