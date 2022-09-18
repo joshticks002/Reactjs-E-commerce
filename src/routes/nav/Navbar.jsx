@@ -14,10 +14,11 @@ const Nav = styled.nav`
   margin-bottom: 10px;
 
   .logo {
-    padding: 10px 0;
+    padding: 0px 0;
     .logo-img {
       width: 60px;
       heigth: 60px;
+      margin-left: -30%;
     }
   }
 `;
