@@ -7,7 +7,6 @@ import Button from "../button/button.component";
 
 import {
   signInWithGooglePopup,
-  signInWithGoogleRedirect,
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 import Swal from "sweetalert2";
@@ -31,7 +30,7 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    await signInWithGoogleRedirect();
+    await signInWithGooglePopup();
     
     setTimeout(() => {
       Swal.fire({
