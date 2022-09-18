@@ -11,18 +11,18 @@ import { UserContext } from "./context/user.context";
 import Swal from "sweetalert2";
 
 const App = () => {
-  // useEffect(() => {
-  //   Swal.fire({
-  //     position: 'center',
-  //     title: "Welcome",
-  //     text: "This is your favorite Trendlin!",
-  //     confirmButtonText:
-  //       '<i class="fa fa-thumbs-up"></i> Great!',
-  //     confirmButtonAriaLabel: 'Thumbs up, great!',
-  //     confirmButtonColor: "#f0aa1f",
-  //     footer: "<a href>Shop our variety of products</a>"
-  //   });
-  // }, []);
+  useEffect(() => {
+    Swal.fire({
+      position: 'center',
+      title: "Welcome",
+      text: "This is your favorite Trendlin!",
+      confirmButtonText:
+        '<i class="fa fa-thumbs-up"></i> Great!',
+      confirmButtonAriaLabel: 'Thumbs up, great!',
+      confirmButtonColor: "#f0aa1f",
+      footer: "<a href>Shop our variety of products</a>"
+    });
+  }, []);
   
   const {currentUser} = useContext(UserContext)
 

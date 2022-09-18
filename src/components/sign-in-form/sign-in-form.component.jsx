@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
 
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
@@ -6,6 +7,7 @@ import Button from "../button/button.component";
 
 import {
   signInWithGooglePopup,
+  signInWithGoogleRedirect,
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 import Swal from "sweetalert2";
@@ -21,13 +23,15 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
+  const navigate = useNavigate()
+
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
   const signInWithGoogle = async () => {
-    await signInWithGooglePopup();
+    await signInWithGoogleRedirect();
     
     setTimeout(() => {
       Swal.fire({
@@ -37,7 +41,8 @@ const SignInForm = () => {
         text: `Successfully logged In`,
         confirmButtonColor: "#f0aa1f",
       });
-    }, 500);
+      navigate('/shop')
+    }, 0);
   };
 
   const handleSubmit = async (event) => {
@@ -52,18 +57,19 @@ const SignInForm = () => {
       resetFormFields();
       setTimeout(() => {
         Swal.fire({
-          position: "top",
+          position: "center",
           icon: "success",
           iconColor: "#f0aa1f",
           text: `Successfully logged In`,
           confirmButtonColor: "#f0aa1f",
         });
+        navigate('/shop')
       }, 500);
     } catch (error) {
       switch (error.code) {
         case "auth/wrong-password":
           Swal.fire({
-            position: "top",
+            position: "center",
             icon: "info",
             iconColor: "#f0aa1f",
             title: "Error",
@@ -76,7 +82,7 @@ const SignInForm = () => {
           break;
         case "auth/user-not-found":
           Swal.fire({
-            position: "top",
+            position: "center",
             icon: "info",
             iconColor: "#f0aa1f",
             title: "Error",

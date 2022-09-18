@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import { UserContext } from "../../context/user.context";
 
 import Swal from "sweetalert2";
@@ -22,6 +23,7 @@ const SignUp = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
+  const navigate = useNavigate()
   // const { setCurrentUser } = useContext(UserContext)
 
   const resetFormFields = () => {
@@ -47,18 +49,19 @@ const SignUp = () => {
       resetFormFields();
       setTimeout(() => {
         Swal.fire({
-          position: "top",
+          position: "center",
           icon: "success",
           iconColor: "#f0aa1f",
           text: `Successfully registered`,
           confirmButtonColor: "#f0aa1f",
         });
+        navigate('/shop')
       }, 500);
     } catch (err) {
       if (err.code === "auth/email-already-in-use") {
         setTimeout(() => {
           Swal.fire({
-            position: "top",
+            position: "center",
             icon: "info",
             iconColor: "#f0aa1f",
             title: "Error",
