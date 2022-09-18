@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import React, { Fragment } from "react";
-import { ReactComponent as MyLogo } from "../../assets/crown.svg";
+// import { ReactComponent as MyLogo } from "../../assets/crown.svg";
 import styled from "styled-components";
 import Burger from "./Burger";
 
@@ -15,6 +15,11 @@ const Nav = styled.nav`
 
   .logo {
     padding: 15px 0;
+    .logo-img {
+      width: 50px;
+      heigth: 50px;
+      top: 0;
+    }
   }
 `;
 
@@ -24,7 +29,7 @@ const Navibar = () => {
       <Nav>
         <Link to="/">
           <div className="logo">
-            <MyLogo />
+          <img src="https://png.pngtree.com/png-vector/20190303/ourmid/pngtree-modern-abstract-3d-logo-png-image_771012.jpg" alt="sneakers" className='logo-img'/>
           </div>
         </Link>
         <Burger />
