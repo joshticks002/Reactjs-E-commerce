@@ -1,6 +1,7 @@
 #footer {
     padding: 50px 0 20px;
     background: #fff;
+    margin: 20px;
 }
 
 .title-text {
@@ -107,6 +108,9 @@
 }
 
 @media screen and (max-width: 770px) {
+    .footer {
+        margin: 20px;
+    }
     .footer-left,
     .footer-right {
         flex-basis: 100%;
