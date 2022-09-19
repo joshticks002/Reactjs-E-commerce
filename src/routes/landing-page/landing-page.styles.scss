@@ -21,16 +21,20 @@
     }
     .logo-container img {
         width: 100%;
+        box-sizing: border-box;
         @media (max-width: 912px) {
+            width: 400px;
+        }
+        @media (max-width: 768px) {
             width: 200px;
-            background-color: grey;
         }
     }
     @media (max-width: 912px) {
-        width: 70%;
+        width: 80%;
         // flex-wrap: wrap;
         height: auto;
         margin-top: 15px;
+        box-sizing: border-box;
     }
 }
 
@@ -62,6 +66,7 @@
             margin: 15px auto;
             height: 150px;
             width: 250px;
+            font-size: 12px;
         }
     }
     @media (max-width: 912px) {
