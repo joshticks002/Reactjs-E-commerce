@@ -19,7 +19,9 @@
             }
         }
         @media (max-width: 768px) {
-            visibility: hidden;
+            // visibility: hidden;
+            font-size: 10px;
+            width: 100%
         }
     }
     .total {
