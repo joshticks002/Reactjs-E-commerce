@@ -24,11 +24,11 @@ const ContactUs = () => {
         <div className="footer-right">
           <h1>Get in Touch</h1>
           <p>
-            #30 abc Colony, xyz City IN
+            #02, Edo Tech Park, Okhouromi, Edo
             <i className="fa fa-map-marker" aria-hidden="true"></i>
           </p>
           <p>
-            example@website.com
+            jadeyemo002@gmail.com
             <i className="fa fa-paper-plane" aria-hidden="true"></i>
           </p>
           <p>

@@ -33,17 +33,17 @@ const categories = [
   },
   {
     id: 5,
-    title: "Womens",
+    title: "Women",
     imageUrl:
       "https://cdn.pixabay.com/photo/2015/11/16/16/30/clothing-1045960_960_720.jpg",
-    route: "shop/womens",
+    route: "shop/women",
   },
   {
     id: 6,
-    title: "Mens",
+    title: "Men",
     imageUrl:
       "https://cdn.pixabay.com/photo/2017/06/21/23/10/tshirt-2429016_960_720.jpg",
-    route: "shop/mens",
+    route: "shop/men",
   },
   {
     id: 7,

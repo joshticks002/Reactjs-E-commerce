@@ -43,28 +43,31 @@ const RightNav = ({ open }) => {
 
   return (
     <>
-    <Ul open={open}>
-      {/* {currentUser && ( */}
-        <Link className="nav-link" to="/shop">
+      <Ul open={open}>
+        <Link className="nav-link" to="/category">
+          <li>Category</li>
+        </Link>
+        {/* {currentUser && ( */}
+        <Link className="nav-link" to="/category/shop">
           <li>Market</li>
         </Link>
-      {/* )} */}
+        {/* )} */}
 
-      <Link className="nav-link" to="/contact">
-        <li>Contact</li>
-      </Link>
-      {currentUser ? (
-        <li className="nav-link" onClick={signOutUser}>
-          Sign Out
-        </li>
-      ) : (
-        <Link className="nav-link" to="/auth">
-          <li>Sign In</li>
+        <Link className="nav-link" to="/contact">
+          <li>Contact</li>
         </Link>
-      )}
-      <CartIcon />
-    </Ul>
-    {isCartOpen && <CartDropdown />}
+        {currentUser ? (
+          <li className="nav-link" onClick={signOutUser}>
+            Sign Out
+          </li>
+        ) : (
+          <Link className="nav-link" to="/auth">
+            <li>Sign In</li>
+          </Link>
+        )}
+        <CartIcon />
+      </Ul>
+      {isCartOpen && <CartDropdown />}
     </>
   );
 };

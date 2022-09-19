@@ -31,13 +31,13 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Navibar />}>
-        <Route index element={<Home />} />
+      <Route index element={<LandingPage />} />
+        <Route path="/category"  element={<Home />} />
         <Route path="/auth" element={<Authentication />} />
        {currentUser && (<Route path="/shop" element={<Shop />} />)}
-       <Route path="/shop/*" element={<Shop />} />
+       <Route path="/category/shop/*" element={<Shop />} />
        <Route path="/checkout" element={<Checkout />} />
-       <Route path="/contact" element={<ContactUs />} />
-       <Route path="/trendlin" element={<LandingPage />} />
+       <Route path="/contact" element={<ContactUs />} />  
       </Route>
     </Routes>
   );
