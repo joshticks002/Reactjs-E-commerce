@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import styled from "styled-components";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
@@ -40,6 +40,12 @@ const Ul = styled.ul`
 const RightNav = ({ open }) => {
   const { currentUser } = useContext(UserContext);
   const { isCartOpen } = useContext(CartContext);
+  const navigate = useNavigate()
+
+  const handleSignOut = () => {
+    signOutUser()
+    navigate("/category")
+  }
 
   return (
     <>
@@ -47,17 +53,17 @@ const RightNav = ({ open }) => {
         <Link className="nav-link" to="/category">
           <li>Category</li>
         </Link>
-        {/* {currentUser && ( */}
+        {currentUser && (
         <Link className="nav-link" to="/category/shop">
           <li>Market</li>
         </Link>
-        {/* )} */}
+        )}
 
         <Link className="nav-link" to="/contact">
           <li>Contact</li>
         </Link>
         {currentUser ? (
-          <li className="nav-link" onClick={signOutUser}>
+          <li className="nav-link" onClick={handleSignOut}>
             Sign Out
           </li>
         ) : (

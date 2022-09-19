@@ -40,7 +40,7 @@ const SignInForm = () => {
         text: `Successfully logged In`,
         confirmButtonColor: "#f0aa1f",
       });
-      navigate('/shop')
+      navigate('/category')
     }, 0);
   };
 
@@ -62,7 +62,7 @@ const SignInForm = () => {
           text: `Successfully logged In`,
           confirmButtonColor: "#f0aa1f",
         });
-        navigate('/shop')
+        navigate('/category')
       }, 500);
     } catch (error) {
       switch (error.code) {

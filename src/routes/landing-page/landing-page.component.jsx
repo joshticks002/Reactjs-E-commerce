@@ -1,9 +1,12 @@
 import React, { Fragment } from "react";
+import { useNavigate } from "react-router-dom"
 import Button from "../../components/button/button.component";
 import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
 import "./landing-page.styles.scss";
 
 const LandingPage = () => {
+    const navigate = useNavigate()
+    const handleNav = () => navigate("/auth")
   return (
     <Fragment>
       <MDBCarousel
@@ -37,7 +40,7 @@ const LandingPage = () => {
             Trendlin enables express checkouts from our platform with no code
             generation. Get the very best.
           </p>
-          <Button text="Get Started" buttonType="google" type="button" />
+          <Button text="Get Started" buttonType="google" type="button" onClick={handleNav} />
         </div>
         <div className="logo-container">
           <img

@@ -3,12 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { CgClose } from "react-icons/cg";
 
 import { CartContext } from "../../context/cart.context";
+import { UserContext } from "../../context/user.context";
 import Button from "../button/button.component";
 import CartItem from "../cart-item/cart-item.component";
 import "./cart-dropdown.styles.scss";
 
 const CartDropdown = () => {
   const { cartItems, isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const { currentUser } = useContext(UserContext);
   const navigate = useNavigate()
 
   const goToCheckout = () => navigate('/checkout')
@@ -26,7 +28,7 @@ const CartDropdown = () => {
           <span className="empty-message">Your cart is empty</span>
         )}
       </div>
-      <Button text="Go to checkout" buttonType="inverted" onClick={goToCheckout} />
+      {currentUser && (<Button text="Go to checkout" buttonType="inverted" onClick={goToCheckout} />)}
     </div>
   );
 };

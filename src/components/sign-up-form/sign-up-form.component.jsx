@@ -55,7 +55,7 @@ const SignUp = () => {
           text: `Successfully registered`,
           confirmButtonColor: "#f0aa1f",
         });
-        navigate('/shop')
+        navigate('/category')
       }, 500);
     } catch (err) {
       if (err.code === "auth/email-already-in-use") {
