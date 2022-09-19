@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import Button from "../../components/button/button.component";
 import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
 import "./landing-page.styles.scss";
 
@@ -29,8 +30,37 @@ const LandingPage = () => {
           alt="..."
         />
       </MDBCarousel>
-      <div className="upper-block">Introduce Trendlin</div>
-      <div className="lower-block">Talk about trendlin</div>
+      <div className="upper-block">
+        <div className="intro-container">
+          <h2>Boost your happiness with Trendlin Store products</h2>
+          <p>
+            Trendlin enables express checkouts from our platform with no code
+            generation. Get the very best.
+          </p>
+          <Button text="Get Started" buttonType="google" type="button" />
+        </div>
+        <div className="logo-container">
+          <img
+            src="https://png.pngtree.com/png-vector/20190303/ourmid/pngtree-modern-abstract-3d-logo-png-image_771012.jpg"
+            alt="sneakers"
+            className="logo-img"
+          />
+        </div>
+      </div>
+      <div className="lower-block">
+        <div className="lower-block-level">
+          Trendlin enables express checkouts from our platform with no code
+          generation. Get the very best.
+        </div>
+        <div className="lower-block-level">
+          Trendlin enables express checkouts from our platform with no code
+          generation. Get the very best.
+        </div>
+        <div className="lower-block-level">
+          Trendlin enables express checkouts from our platform with no code
+          generation. Get the very best.
+        </div>
+      </div>
     </Fragment>
   );
 };
