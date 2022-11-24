@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useContext } from "react";
+
+import {
+  onAuthStateChangedListener,
+  createUserDocFromAuth,
+} from "./utils/firebase/firebase.utils";
 import Home from "./routes/home/home.component";
 // import NavBar from "./routes/navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication";
@@ -9,7 +13,6 @@ import Shop from "./routes/shop/shop.component";
 import Checkout from "./routes/checkout/checkout.component";
 import ContactUs from "./routes/contact-us/contact-us.component";
 import LandingPage from "./routes/landing-page/landing-page.component";
-import { UserContext } from "./context/user.context";
 import Swal from "sweetalert2";
 
 const App = () => {
@@ -23,9 +26,12 @@ const App = () => {
       confirmButtonColor: "#f0aa1f",
       footer: "<a href>Shop our variety of products</a>",
     });
+    const unsubscribe = onAuthStateChangedListener((user) => {
+      if (user) createUserDocFromAuth(user);
+      // setCurrentUser(user);
+    });
+    return unsubscribe;
   }, []);
-
-  const { currentUser } = useContext(UserContext);
 
   return (
     <Routes>
@@ -34,7 +40,7 @@ const App = () => {
         <Route path="/category" element={<Home />} />
         <Route path="/auth" element={<Authentication />} />
         <Route path="/category/shop/*" element={<Shop />} />
-        {currentUser && <Route path="/checkout" element={<Checkout />} />}
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="/contact" element={<ContactUs />} />
       </Route>
     </Routes>
